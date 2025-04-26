@@ -1,19 +1,19 @@
-name: Keep Render App Alive
-
-on:
-  schedule:
-    - cron: '*/1 * * * *'  # Runs every minute
-  workflow_dispatch:  # Allows manual trigger
-
-jobs:
-  keep_alive:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Start API Pinger
-        run: |
-          for i in {1..6}
-          do
-            curl -s https://mo7agpt-88lb.onrender.com/chat?request=hi > /dev/null
-            echo "Ping $i done!"
-            sleep 50  # Wait 50 seconds before the next ping
-          done
+#name: Keep Render App Alive
+#
+#on:
+#  schedule:
+#    - cron: '*/1 * * * *'  # Runs every minute
+#  workflow_dispatch:  # Allows manual trigger#
+#
+#jobs:
+#  keep_alive:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Start API Pinger
+#        run: |
+#          for i in {1..6}
+#          do
+#            curl -s https://mo7agpt-88lb.onrender.com/chat?request=hi > /dev/null
+#            echo "Ping $i done!"
+#            sleep 50  # Wait 50 seconds before the next ping
+#          done
